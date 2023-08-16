@@ -21,7 +21,8 @@ const Commentlist = (props) => {
 
     const fetchData = async (name, comments) => {
         try {
-            const url = "http://localhost:3001/api/comment/comments";
+            // const url = "http://localhost:3001/api/comment/comments";
+            const url = "https://tokpedplay-comment-api.onrender.com";
             const params = {
                 username: name,
                 comment: comments,

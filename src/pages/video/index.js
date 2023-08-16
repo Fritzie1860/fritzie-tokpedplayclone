@@ -25,13 +25,15 @@ const VideoDetail = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3001/api/product/products/" + id
+          // "http://localhost:3001/api/product/products/" + id
+          "https://tokpedplay-product-api/"+ id + ".onrender.com"
         );
         setData(response.data);
 
         // Fetch comments data here and set it to the state
         const commentsResponse = await axios.get(
-          "http://localhost:3001/api/comment/comments/" + id
+          // "http://localhost:3001/api/comment/comments/" + id
+          "https://tokpedplay-comment-api/"+ id + ".onrender.com"
         );
         setComments(commentsResponse.data);
 

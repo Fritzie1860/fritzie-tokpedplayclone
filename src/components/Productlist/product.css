@@ -1,0 +1,126 @@
+.product-card {
+  width: 95%;
+  border: none;
+  background-color: white;
+  position: relative;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin-bottom: 15px;
+  display: flex; /* Add this line to make it a flex container */
+  justify-content: center; /* Center content horizontally */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-col {
+  padding-right: 10px;
+  
+}
+
+.row-image{
+  max-width: 50%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+.text-col{
+  vertical-align: middle;
+}
+
+.text {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.title {
+  margin-bottom: 0;
+  color: #05AA5B;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.desc {
+  color: #494949;
+  font-weight: bold;
+}
+
+.product-card .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(var(--rgb-dark), 0.6);
+  opacity: 0;
+  z-index: 4;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.product-card:hover .overlay {
+  opacity: 1;
+}
+
+.product-card .overlay a {
+  position: relative;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  cursor: pointer !important;
+}
+
+.product-card .overlay * {
+  color: var(--color-white) !important;
+  transition: all 0.4s ease;
+}
+
+.product-card .overlay span.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 4;
+  background: rgba(var(--rgb-dark), 0.6);
+}
+
+.product-card .overlay5 figcaption {
+  background: rgba(var(--rgb-dark), 0.6);
+}
+
+.product-card .overlay a,
+.product-card .overlay span.bg {
+  position: relative;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  cursor: pointer !important;
+}
+
+.product-card .overlay * {
+  color: var(--color-white) !important;
+  transition: all 0.4s ease;
+}
+
+
+.product-list {
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow: scroll;
+}

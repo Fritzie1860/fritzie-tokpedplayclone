@@ -8,6 +8,7 @@ See [backend repository](https://github.com/Fritzie1860/backend-tokpedplayclone)
 ## **Table of Contents**
 
 - [Routes](#routes)
+- [Server Hosting Information](#server-hosting-information)
 - [How to run in local](#how-to-run-in-local)
 
 
@@ -16,7 +17,18 @@ See [backend repository](https://github.com/Fritzie1860/backend-tokpedplayclone)
 | Route                 | Page Description                                 |
 | --------------------- | ------------------------------------------------ |
 | /                     | Dashboard of the app.                            |
-| /videos/:id           | Video page based on `:id`.                       |
+| /videos/:id           | Video page based on video_id.                    |
+
+
+## **Server Hosting Information**
+
+The server is hosted on the 000webhost.com platform with the server link: https://tokpedplay-fritzie.000webhostapp.com.
+
+**How to Access the Server:**
+
+To interact with the server, you can use the provided link: https://tokpedplay-fritzie.000webhostapp.com.
+
+Please note that this link serves as the base URL for making API requests to the server. Make sure to include the relevant endpoints in your requests as needed.
 
 
 ## **How to run in local**
@@ -48,4 +60,4 @@ If you're running the backend separately, start the server using either of the f
 ```
    npm start
 ```
-To run the frontend and backend together, you may need to see this repository.
+To run the frontend and backend together, you may need to see this [repository] (https://github.com/Fritzie1860/FinalProject-TokpedPlayClone).

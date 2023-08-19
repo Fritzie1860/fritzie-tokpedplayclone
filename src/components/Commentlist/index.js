@@ -4,7 +4,7 @@ import {Form, Button} from "react-bootstrap";
 import "./commentlist.css";
 
 const Commentlist = (props) => {
-    const {comments, ids, fresh} = props;
+    const {comments, video_id, fresh} = props;
     const [data, setData] = useState("");
     const [comment, setComment] = useState("");
     const [username, setUsername] = useState("");
@@ -19,14 +19,13 @@ const Commentlist = (props) => {
         setComment(e.target.value);
     };
 
-    const fetchData = async (name, comments) => {
+    const fetchData = async (username, comments) => {
         try {
-            // const url = "http://localhost:3001/api/comment/comments";
-            const url = "https://tokpedplay-comment-api.onrender.com";
+            const url = "https://tokpedplay-fritzie.onrender.com/comments";
             const params = {
-                username: name,
+                username: username,
                 comment: comments,
-                video_id: ids
+                video_id: video_id
             };
             const response = await axios.post(url, params);
             console.log('hai, ' + JSON.stringify(response));
@@ -40,7 +39,6 @@ const Commentlist = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle comment submission logic here
         console.log("Submitted username:", username);
         console.log("Submitted comment:", comment);
         setLoading(true);
@@ -68,7 +66,7 @@ const Commentlist = (props) => {
                     className="d-flex">
                     <div className="row m-1">
                         <input type="hidden" name="video_id"
-                            value={ids}/>
+                            value={video_id}/>
                         <input type="text" placeholder="Username..." className="flex-grow-1 mr-2"
                             required
                             value={username}

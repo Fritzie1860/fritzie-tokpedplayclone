@@ -16,8 +16,7 @@ const Thumbnail = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // "http://localhost:3001/api/video/videos"
-          "https://tokpedplay-video-api.onrender.com"
+          "https://tokpedplay-fritzie.onrender.com/videos"
         );
         setData(response.data);
         await sleep(2000);
@@ -54,8 +53,7 @@ const Thumbnail = () => {
                 <Card.Title>{video.title}</Card.Title>
                 <Card.Text>{video.upload_date}</Card.Text>
                 <a
-                  // href={"http://localhost:3000/video?id=" + video._id}
-                  href = {"https://tokpedplay-video-api/"+video._id+".onrender.com"}
+                  href={"https://tokpedplay-fritzie.000webhostapp.com/video?id=" + video._id}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

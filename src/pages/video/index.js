@@ -7,11 +7,10 @@ import ProductList from "../../components/Productlist";
 import VideoPlayer from "../../components/Videoplayer";
 import CommentList from "../../components/Commentlist";
 
-
 const VideoDetail = () => {
-  
   const [data, setData] = useState([]);
-  const [comments, setComments] = useState([]); // State for comments
+  const [link, setLink] = useState([]);
+  const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [id, setId] = useState(null);
@@ -25,17 +24,19 @@ const VideoDetail = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // "http://localhost:3001/api/product/products/" + id
-          "https://tokpedplay-product-api/"+ id + ".onrender.com"
+          "https://tokpedplay-fritzie.onrender.com/products/" + id
         );
         setData(response.data);
 
-        // Fetch comments data here and set it to the state
         const commentsResponse = await axios.get(
-          // "http://localhost:3001/api/comment/comments/" + id
-          "https://tokpedplay-comment-api/"+ id + ".onrender.com"
+          "https://tokpedplay-fritzie.onrender.com/comments/" + id
         );
         setComments(commentsResponse.data);
+
+        const linkResponse = await axios.get(
+          "https://tokpedplay-fritzie.onrender.com/videos/" + id
+        );
+        setLink(linkResponse.data[0].link_video);
 
         setLoading(false);
       } catch (error) {
@@ -63,10 +64,10 @@ const VideoDetail = () => {
             <ProductList data={data} />
           </Col>
           <Col lg={7}>
-            <VideoPlayer />
+            <VideoPlayer link_video={link}/>
           </Col>
           <Col lg={3}>
-            <CommentList comments={comments} ids={id} fresh={setFresh}/>
+            <CommentList comments={comments} video_id={id} fresh={setFresh}/>
           </Col>
         </Row>
       {/* <Footer /> */}

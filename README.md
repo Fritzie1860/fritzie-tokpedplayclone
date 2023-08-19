@@ -60,4 +60,4 @@ If you're running the backend separately, start the server using either of the f
 ```
    npm start
 ```
-To run the frontend and backend together, you may need to see this [repository] (https://github.com/Fritzie1860/FinalProject-TokpedPlayClone).
+To run the frontend and backend together, you may need to see this [repository](https://github.com/Fritzie1860/FinalProject-TokpedPlayClone).
